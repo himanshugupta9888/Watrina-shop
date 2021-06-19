@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="addAddOnMainViewModel"
+            type="com.watirna.shop.views.product.addons.create.AddAddOnViewModel" />
+
+    </data>
+
+
+    <LinearLayout
+        android:id="@+id/toplayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/addon_header"
+            layout="@layout/header_toolbar" />
+
+
+        <!--TextInputLayout AddOn Name-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tv_addon_name"
+            style="@style/Edit_Text_Outlined_Theme"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="8dp"
+            android:hint="@string/addon_name"
+            android:visibility="visible"
+            app:boxBackgroundColor="@color/white"
+            tools:visibility="visible">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:maxLines="1"
+                android:paddingStart="25dp"
+                android:paddingEnd="25dp"
+                android:singleLine="true"
+                android:text="@={addAddOnMainViewModel.addOnName}"
+                android:textColor="@color/et_text_color"
+                android:textSize="@dimen/_14sdp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/title"
+            android:layout_margin="@dimen/_10sdp"
+            app:cardCornerRadius="@dimen/_25sdp">
+
+            <Spinner
+                android:id="@+id/status_spinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:outlineAmbientShadowColor="@color/black"
+                android:paddingLeft="@dimen/_10sdp" />
+        </androidx.cardview.widget.CardView>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_margin="@dimen/_10sdp"
+                android:onClick="@{()-> addAddOnMainViewModel.createAddOn()}"
+                android:text="Create Addon" />
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+
+</layout>

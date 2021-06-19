@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="productListViewModel"
+            type="com.watirna.shop.views.product.productDML.ProductListViewModel" />
+
+        <variable
+            name="productListAdapter"
+            type="com.watirna.shop.views.adapters.ProductListAdapter" />
+    </data>
+
+
+    <RelativeLayout
+        android:id="@+id/toplayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/app_background_color"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/product_header"
+            layout="@layout/header_toolbar" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/product_header"
+            android:paddingBottom="@dimen/_50sdp">
+            <!-- android:adapter="@{oddonAdapter}"-->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/item_rv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adapter="@{productListAdapter}"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:itemCount="3"
+                tools:listitem="@layout/layout_product_list_item" />
+            <!-- android:onClick="@{()-> addOnMainViewModel.goToAddOnCreate()}"-->
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:visibility="gone"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_40sdp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                app:backgroundTint="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                app:rippleColor="@color/colorPrimary"
+                android:clickable="true"
+                android:rotation="90"
+                android:src="@android:drawable/arrow_up_float" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                app:backgroundTint="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:clickable="true"
+                app:rippleColor="@color/colorPrimary"
+                android:rotation="90"
+                android:src="@android:drawable/arrow_down_float" />
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/btn_addProduct"
+            android:layout_margin="@dimen/_10sdp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:onClick="@{()-> productListViewModel.openCreateProductActivity()}"
+            android:text="Add Product" />
+
+    </RelativeLayout>
+
+
+</layout>

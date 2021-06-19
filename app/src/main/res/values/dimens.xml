@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="boxCornerRadius">27dp</dimen>
+    <dimen name="et_textsize">12sp</dimen>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_vertical_margin">@dimen/_14sdp</dimen>
+    <dimen name="activity_vertical_margin_half">@dimen/_7sdp</dimen>
+
+
+    <dimen name="text_medium">@dimen/_13sdp</dimen>
+    <dimen name="text_small">@dimen/_11sdp</dimen>
+    <dimen name="text_small_large">@dimen/_12sdp</dimen>
+    <dimen name="text_tiny">@dimen/_10sdp</dimen>
+</resources>

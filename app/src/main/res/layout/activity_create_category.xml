@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="createCategoryViewModel"
+            type="com.watirna.shop.views.product.category.create.CreateCategoryViewModel" />
+
+    </data>
+
+
+    <LinearLayout
+        android:id="@+id/toplayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/addon_header"
+            layout="@layout/header_toolbar" />
+
+
+        <!--TextInputLayout Category Name-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tv_addon_name"
+            style="@style/Edit_Text_Outlined_Theme"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="8dp"
+            android:hint="@string/category_name"
+            android:visibility="visible"
+            app:boxBackgroundColor="@color/white"
+            tools:visibility="visible">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:maxLines="1"
+                android:paddingStart="25dp"
+                android:paddingEnd="25dp"
+                android:singleLine="true"
+                android:text="@={createCategoryViewModel.categoryName}"
+                android:textColor="@color/et_text_color"
+                android:textSize="@dimen/_14sdp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!--TextInputLayout Category Category Description-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tv_category_desc"
+            style="@style/Edit_Text_Outlined_Theme"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="8dp"
+            android:textAlignment="textStart"
+            android:hint="@string/category_descritption"
+            android:visibility="visible"
+            app:boxBackgroundColor="@color/white"
+            tools:visibility="visible">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:textAlignment="textStart"
+                android:gravity="start"
+                android:maxLines="4"
+                android:paddingStart="25dp"
+                android:paddingEnd="25dp"
+                android:text="@={createCategoryViewModel.category_desc}"
+                android:textColor="@color/et_text_color"
+                android:textSize="@dimen/_14sdp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/title"
+            android:layout_margin="@dimen/_10sdp"
+            app:cardCornerRadius="@dimen/_25sdp">
+
+            <Spinner
+                android:id="@+id/status_spinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:outlineAmbientShadowColor="@color/black"
+                android:paddingLeft="@dimen/_10sdp" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:onClick="@{()-> createCategoryViewModel.imageUpload()}"
+            android:layout_margin="@dimen/_10sdp"
+            app:cardCornerRadius="@dimen/_25sdp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_10sdp">
+
+                <ImageView
+                    android:id="@+id/image_category"
+                    android:layout_width="@dimen/_60sdp"
+                    android:layout_height="@dimen/_60sdp"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/ic_image_upload" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/image_category"
+                    android:padding="@dimen/_2sdp"
+                    android:text="@string/select_category_image"
+                    android:textSize="@dimen/_14sdp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_margin="@dimen/_10sdp"
+                android:onClick="@{()-> createCategoryViewModel.createCategory()}"
+                android:text="@string/create_category" />
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+
+</layout>

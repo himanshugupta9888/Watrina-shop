@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="citylistmodel"
+            type="com.watirna.shop.views.citylist.CityListViewModel" />
+
+        <variable
+            name="cityListAdapter"
+            type="com.watirna.shop.views.adapters.CityListAdapter" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        android:theme="@style/AppTheme">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorBasePrimary"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/white"
+                android:contentDescription="@string/app_name"
+                android:onClick="@{() -> citylistmodel.closeActivity()}"
+                android:paddingStart="@dimen/_5sdp"
+                android:src="@drawable/ic_backarrow"
+                android:tint="@color/white" />
+
+            <androidx.appcompat.widget.SearchView
+                android:id="@+id/sv_city"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:background="@color/white"
+                app:iconifiedByDefault="false"
+                app:queryHint="@string/search_city" />
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/country_list_rv"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:adapter="@{cityListAdapter}"
+            android:background="@color/colorWhite"
+            android:forceHasOverlappingRendering="true"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:targetApi="n" />
+
+    </LinearLayout>
+</layout>

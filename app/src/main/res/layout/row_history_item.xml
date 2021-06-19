@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/itemView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/activity_vertical_margin"
+        android:layout_marginTop="@dimen/activity_vertical_margin_half"
+        android:layout_marginEnd="@dimen/activity_vertical_margin"
+        android:layout_marginBottom="@dimen/activity_vertical_margin_half"
+        android:elevation="@dimen/_4sdp"
+        app:cardCornerRadius="@dimen/_4sdp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_100sdp"
+            android:background="@color/very_light_grey">
+
+            <LinearLayout
+                android:id="@+id/llTime"
+                android:layout_width="@dimen/_80sdp"
+                android:layout_height="match_parent"
+                android:background="@color/colorAccent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/avenirltstd_medium"
+                    android:text="12"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_12sdp"/>
+
+                <TextView
+                    android:id="@+id/tvTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/avenirltstd_medium"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_12sdp"/>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvOrderId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                app:layout_constraintLeft_toRightOf="@+id/llTime"
+                app:layout_constraintBottom_toTopOf="@+id/tvUsername"
+                android:text="ORD1583245853647"
+                android:textColor="@color/colorPrimary"
+                android:layout_marginLeft="@dimen/_4sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:fontFamily="@font/avenirltstd_medium"
+                app:layout_constraintTop_toTopOf="parent"
+                android:minLines="1"/>
+
+            <TextView
+                android:id="@+id/tvUsername"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                app:layout_constraintLeft_toRightOf="@+id/llTime"
+                app:layout_constraintBottom_toTopOf="@+id/tvLocation"
+                android:text="William mar"
+                android:layout_marginLeft="@dimen/_4sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_8sdp"
+                android:fontFamily="@font/avenirltstd_medium"
+                android:minLines="1"/>
+
+<!--            <TextView-->
+<!--                android:id="@+id/tvLabelprice"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Price"-->
+<!--                android:layout_marginRight="@dimen/_4sdp"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintLeft_toRightOf="@+id/tvUsername"-->
+<!--                app:layout_constraintBaseline_toBaselineOf="@+id/tvUsername"-->
+<!--                android:layout_marginTop="@dimen/_10sdp"-->
+<!--                app:layout_constraintTop_toTopOf="parent"/>-->
+
+            <TextView
+                android:id="@+id/tvLocation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_2sdp"
+                android:layout_marginRight="@dimen/_4sdp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/llTime"
+                android:text=""
+                android:layout_marginTop="@dimen/_15sdp"
+                android:gravity="center_vertical"
+                android:textSize="@dimen/_10sdp"
+                android:textColor="@color/gray"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:fontFamily="@font/avenirltstd_medium"
+                android:drawableStart="@drawable/ic_location"/>
+
+<!--            <TextView-->
+<!--                android:id="@+id/tvPrice"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:fontFamily="@font/avenirltstd_medium"-->
+<!--                android:textSize="@dimen/_10sdp"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintBaseline_toBaselineOf="@+id/tvLocation"-->
+<!--                android:layout_marginTop="@dimen/_2sdp"-->
+<!--                android:layout_marginRight="@dimen/_4sdp"-->
+<!--                android:text="$price"-->
+<!--                android:textColor="@color/gray"/>-->
+
+
+<!--            <TextView-->
+<!--                android:id="@+id/tvLabelPayment"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:fontFamily="@font/avenirltstd_medium"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="@dimen/_10sdp"-->
+<!--                android:text="@string/payment_via"-->
+<!--                android:layout_marginLeft="@dimen/_4sdp"-->
+<!--                android:layout_marginTop="@dimen/_10sdp"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/tvLocation"-->
+<!--                app:layout_constraintStart_toEndOf="@+id/llTime"/>-->
+
+            <TextView
+                android:id="@+id/tvPaymentType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toEndOf="@+id/llTime"
+                app:layout_constraintTop_toBottomOf="@+id/tvLocation"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginLeft="@dimen/_4sdp"
+                android:text="Cash"/>
+
+            <TextView
+                android:id="@+id/tvPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/avenirltstd_medium"
+                android:textSize="@dimen/_10sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBaseline_toBaselineOf="@+id/tvPaymentType"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:layout_marginRight="@dimen/_4sdp"
+                android:text="$price"
+                android:textColor="@color/gray"/>
+
+<!--            app:layout_constraintLeft_toRightOf="@+id/tvLabelPayment"-->
+<!--            app:layout_constraintBaseline_toBaselineOf="@+id/tvLabelPayment"-->
+             </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</layout>

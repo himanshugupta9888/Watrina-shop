@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="categoriesViewModel"
+            type="com.watirna.shop.views.product.category.CategoriesViewModel" />
+
+        <variable
+            name="categoriesAdapter"
+            type="com.watirna.shop.views.adapters.CategoryAdapter" />
+    </data>
+
+
+    <LinearLayout
+        android:id="@+id/toplayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/app_background_color"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/addon_header"
+            layout="@layout/header_toolbar" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:adapter="@{categoriesAdapter}"
+                android:layout_marginBottom="@dimen/_40sdp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:itemCount="3"
+                tools:listitem="@layout/layout_addon_list_item" />
+
+            <Button
+                android:layout_margin="@dimen/_10sdp"
+                android:onClick="@{()-> categoriesViewModel.goToCreateCategory()}"
+                android:text="Create Category"
+                android:layout_alignParentBottom="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+
+</layout>

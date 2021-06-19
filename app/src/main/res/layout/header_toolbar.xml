@@ -1,0 +1,17 @@
+<androidx.appcompat.widget.Toolbar
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/tl_header"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:background="@color/white"
+    android:elevation="5dp"
+    app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+    app:contentInsetStartWithNavigation="0dp"
+    app:contentInsetEnd="0dp"
+    app:contentInsetLeft="0dp"
+    app:contentInsetRight="0dp"
+    app:contentInsetStart="0dp"
+    app:theme="@style/ToolBarStyle">
+    <include layout="@layout/layout_header" />
+</androidx.appcompat.widget.Toolbar>

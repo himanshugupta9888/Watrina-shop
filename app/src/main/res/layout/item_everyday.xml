@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.watirna.shop.views.edittime.EditTimeViewModel" />
+
+        <variable
+            name="position"
+            type="java.lang.Integer" />
+
+        <variable
+            name="item"
+            type="com.watirna.shop.datamodel.ShopTimeModel.ResponseData" />
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="24dp">
+
+
+        <LinearLayout
+            android:id="@+id/llLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="horizontal"
+            android:padding="4dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/day"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/avenirltstd_medium"
+                android:gravity="center_vertical"
+                android:text="@{item.component7()}"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/_14sdp">
+
+            </androidx.appcompat.widget.AppCompatTextView>
+
+            <com.google.android.material.checkbox.MaterialCheckBox
+                android:id="@+id/dayCheckbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="@{item.component6()}"
+                android:onClick="@{() -> viewModel.onCheckedChange(position)}" />
+        </LinearLayout>
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/open"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/avenirltstd_medium"
+            android:text="@string/open"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/llLabel"
+            tools:text="Open Time">
+
+        </androidx.appcompat.widget.AppCompatTextView>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvOpenTime"
+            android:layout_width="@dimen/_80sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/custom_edit_time"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center_vertical|start"
+            android:hint="@string/hint"
+            android:importantForAutofill="no"
+            android:inputType="time"
+            android:maxLength="5"
+            android:onClick="@{() -> viewModel.onOpenCloseTimingClick(position,true)}"
+            android:paddingStart="@dimen/_10sdp"
+            android:text="@{item.component5()}"
+            android:textColorHint="@color/gray"
+            app:layout_constraintStart_toStartOf="@+id/open"
+            app:layout_constraintTop_toBottomOf="@+id/open"
+            tools:ignore="RtlSymmetry">
+
+        </androidx.appcompat.widget.AppCompatTextView>
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/ash"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginTop="10dp"
+            android:background="#F0F0F0"
+            android:importantForAutofill="no"
+            android:onClick="@{() -> viewModel.onOpenCloseTimingClick(position,true)}"
+            android:padding="8dp"
+            android:src="@drawable/clck_icon"
+            android:tint="@color/gray"
+            app:layout_constraintLeft_toRightOf="@+id/tvOpenTime"
+            app:layout_constraintTop_toBottomOf="@+id/open"
+            tools:ignore="LabelFor,RtlSymmetry,TextFields">
+
+        </androidx.appcompat.widget.AppCompatImageButton>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/avenirltstd_medium"
+            android:text="@string/close"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14sdp"
+            app:layout_constraintStart_toStartOf="@+id/tvCloseTime"
+            app:layout_constraintTop_toBottomOf="@+id/llLabel"
+            tools:text="Close Time">
+
+        </androidx.appcompat.widget.AppCompatTextView>
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvCloseTime"
+            android:layout_width="@dimen/_80sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/custom_edit_time"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center_vertical|start"
+            android:hint="@string/hint"
+            android:importantForAutofill="no"
+            android:inputType="time"
+            android:maxLength="5"
+            android:onClick="@{() -> viewModel.onOpenCloseTimingClick(position,false)}"
+            android:paddingStart="@dimen/_10sdp"
+            android:text="@{item.component3()}"
+            android:textColorHint="@color/gray"
+            app:layout_constraintEnd_toStartOf="@+id/closeash"
+            app:layout_constraintTop_toBottomOf="@+id/close"
+            tools:ignore="RtlSymmetry,TextFields">
+
+        </androidx.appcompat.widget.AppCompatTextView>
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/closeash"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="16dp"
+            android:background="#F0F0F0"
+            android:onClick="@{() -> viewModel.onOpenCloseTimingClick(position,false)}"
+            android:padding="8dp"
+            android:src="@drawable/clck_icon"
+            android:tint="@color/gray"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/close">
+
+        </androidx.appcompat.widget.AppCompatImageButton>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:textAlignment="center"
+            android:textSize="12sp"
+            android:text="@{item.error==viewModel.invalidRequest ? @string/restaurant_time_invalid_message : ``}"
+            android:textColor="@color/colorError"
+            app:layout_constraintTop_toBottomOf="@id/closeash"
+            tools:text="@string/restaurant_time_invalid_message" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

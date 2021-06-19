@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="priceViewModel"
+            type="com.watirna.shop.views.product.productDML.price.PriceSelectionViewModel" />
+
+    </data>
+
+
+    <LinearLayout
+        android:id="@+id/priceLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/addon_header"
+            layout="@layout/header_toolbar" />
+
+
+        <!--TextInputLayout Category Name-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tv_price"
+            style="@style/Edit_Text_Outlined_Theme"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="8dp"
+            android:hint="@string/price"
+            android:visibility="visible"
+            app:boxBackgroundColor="@color/white"
+            tools:visibility="visible">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:maxLines="1"
+                android:paddingStart="25dp"
+                android:paddingEnd="25dp"
+                android:singleLine="true"
+                android:text="@={priceViewModel.price}"
+                android:textColor="@color/et_text_color"
+                android:textSize="@dimen/_14sdp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/title"
+            android:layout_margin="@dimen/_10sdp"
+            app:cardCornerRadius="@dimen/_25sdp">
+
+            <Spinner
+                android:id="@+id/percentage_spinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:outlineAmbientShadowColor="@color/black"
+                android:paddingLeft="@dimen/_10sdp" />
+        </androidx.cardview.widget.CardView>
+
+        <!--TextInputLayout Category Category Description-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tv_category_desc"
+            style="@style/Edit_Text_Outlined_Theme"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="8dp"
+            android:hint="@string/shop_discount"
+            android:textAlignment="textStart"
+            android:visibility="visible"
+            app:boxBackgroundColor="@color/white"
+            tools:visibility="visible">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:inputType="text"
+                android:maxLines="4"
+                android:paddingStart="25dp"
+                android:paddingEnd="25dp"
+                android:text="@={priceViewModel.discount}"
+                android:textAlignment="textStart"
+                android:textColor="@color/et_text_color"
+                android:textSize="@dimen/_14sdp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!--TextInputLayout Category Category Description-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tv_addon_name"
+            style="@style/Edit_Text_Outlined_Theme"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="8dp"
+            android:hint="@string/create_addon"
+            android:textAlignment="textStart"
+            android:visibility="visible"
+            app:boxBackgroundColor="@color/white"
+            app:endIconDrawable="@drawable/flag_pl"
+            app:errorIconTint="@color/colorPrimary"
+            tools:visibility="visible">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/createAddText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:inputType="text"
+                android:maxLines="4"
+                android:cursorVisible="false"
+                android:focusable="false"
+                android:paddingStart="25dp"
+                android:paddingEnd="25dp"
+                android:textAlignment="textStart"
+                android:textColor="@color/et_text_color"
+                android:textSize="@dimen/_14sdp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/btn_Save"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_margin="@dimen/_10sdp"
+                android:text="@string/save" />
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+
+</layout>

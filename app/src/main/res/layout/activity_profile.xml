@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="profileViewModel"
+            type="com.watirna.shop.views.profile.ProfileViewModel" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/app_background_color"
+        tools:context="com.watirna.shop.views.profile.ProfileViewModel">
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <include
+                android:id="@+id/profileToolBar"
+                layout="@layout/toolbar_main">
+
+            </include>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cdViewProf"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_40sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                app:cardUseCompatPadding="true"
+                app:cardPreventCornerOverlap="true"
+                app:cardCornerRadius="@dimen/_5sdp"
+                app:layout_constraintTop_toBottomOf="@+id/editprod">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="36dp">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Edit_Text_Outlined_Theme"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:hint="@string/username">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/username_register_et"
+                            style="@style/SmallText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@={profileViewModel.userName}"
+                            android:inputType="text"
+                            android:imeOptions="actionNext"
+                            android:singleLine="true"
+                            android:textColor="@color/et_text_color"
+                            android:textSize="@dimen/et_textsize" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:orientation="horizontal"
+                        android:baselineAligned="false">
+
+                        <!--TextInputLayout country code -->
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/Edit_Text_Outlined_Theme"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_8sdp"
+                            android:layout_marginEnd="@dimen/_8sdp"
+                            android:layout_weight="1"
+                            android:hint="@string/countrycode_hint"
+                            app:boxCornerRadiusBottomEnd="1dp"
+                            app:boxCornerRadiusTopEnd="1dp"
+                            tools:ignore="NestedWeights">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/countrycode_register_et"
+                                style="@style/SmallText"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:drawableStart="@drawable/ic_us"
+                                android:text="@={profileViewModel.country_code}"
+                                android:enabled="false"
+                                android:drawablePadding="@dimen/_3sdp"
+                                android:textColor="@color/et_text_color"
+                                android:textSize="@dimen/et_textsize" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <!--TextInputLayout Phonenum-->
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/Edit_Text_Outlined_Theme"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_8sdp"
+                            android:layout_weight="1.4"
+                            android:hint="@string/phone_number"
+                            app:boxCornerRadiusBottomStart="0dp"
+                            app:boxCornerRadiusTopStart="0dp">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/phonenumber_register_et"
+                                style="@style/SmallText"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@={profileViewModel.phoneNumber}"
+                                android:maxLength="10"
+                                android:inputType="phone"
+                                android:maxLines="1"
+                                android:textColor="@color/et_text_color"
+                                android:textSize="@dimen/et_textsize" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </LinearLayout>
+
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/edtTxtEmail"
+                        style="@style/Edit_Text_Outlined_Theme"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:hint="@string/emailid">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            style="@style/SmallText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="text"
+                            android:text="@={profileViewModel.email}"
+                            android:singleLine="true"
+                            android:imeOptions="actionNext"
+                            android:textColor="@color/et_text_color"
+                            android:textSize="@dimen/et_textsize" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/edtTxtCity"
+                        style="@style/Edit_Text_Outlined_Theme"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:hint="@string/city">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            style="@style/SmallText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/et_text_color"
+                            android:text="@={profileViewModel.city}"
+                            android:inputType="text"
+                            android:singleLine="true"
+                            android:imeOptions="actionNext"
+                            android:textSize="@dimen/et_textsize" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/edtTxtCountry"
+                        style="@style/Edit_Text_Outlined_Theme"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:hint="@string/country">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            style="@style/SmallText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/et_text_color"
+                            android:text="@={profileViewModel.country}"
+                            android:inputType="text"
+                            android:singleLine="true"
+                            android:imeOptions="actionNext"
+                            android:textSize="@dimen/et_textsize" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                </LinearLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/circleImg"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:src="@drawable/ic_profile_place_holder"
+            app:layout_anchor="@id/cdViewProf"
+            app:layout_anchorGravity="center_horizontal">
+
+        </de.hdodenhof.circleimageview.CircleImageView>
+
+        <ImageView
+            android:id="@+id/editImg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_pencil_edit_button"
+            app:layout_anchor="@id/circleImg"
+            app:layout_anchorGravity="center|end"
+            tools:ignore="ContentDescription">
+
+        </ImageView>
+
+        <TextView
+            android:id="@+id/tvSave"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:layout_marginBottom="@dimen/_20sdp"
+            android:onClick="@{()->profileViewModel.validateInputs()}"
+            android:layout_gravity="bottom"
+            android:background="@drawable/capsule_button"
+            android:gravity="center"
+            android:text="@string/save"
+            android:textColor="@color/white">
+
+        </TextView>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+</layout>
+

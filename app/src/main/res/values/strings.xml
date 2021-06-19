@@ -1,0 +1,295 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">Watirna Shop</string>
+    <string name="hint_email_id">Email Id</string>
+    <string name="hint_password">Password</string>
+    <string name="forgot_password">Forgot Password ?</string>
+
+    <!-- Menu Title -->
+    <string name="title_home">Home</string>
+    <string name="title_history">Hisotry</string>
+    <string name="title_account">Account</string>
+    <string name="toolbarTitle">Title</string>
+    <string name="title_Profile">Profile</string>
+    <string name="title_revenue">Revenue</string>
+
+    <!--- Incoming Orders -->
+    <string name="waiting_for_order">Waiting for orders</string>
+    <string name="empty_accepted_orders">No Accepted Orders</string>
+
+    <!--    Request Accept Activity-->
+    <string name="order_time">Order Time</string>
+    <string name="cancel">Cancel</string>
+    <string name="accept">Accept</string>
+    <string name="order_list">Order List</string>
+    <string name="notes">Notes</string>
+    <string name="sub_total">Sub Total</string>
+    <string name="cgst">CGST</string>
+    <string name="sgst">SGST</string>
+    <string name="service_tax">Service Tax</string>
+    <string name="packing_charge">Packing Charge</string>
+    <string name="total">Total</string>
+    <string name="discount">Promocode Amount</string>
+    <string name="shop_discount">Shop Discount</string>
+    <string name="delivery_charges">Delivery Charges</string>
+    <string name="dispute_created">Dispute Created</string>
+
+
+    <!--- Validation -->
+    <string name="email_empty">Email should not be empty</string>
+    <string name="email_invalid">Please enter valid email</string>
+    <string name="password_empty">Password should not be empty</string>
+    <string name="Ok">OK</string>
+
+
+    <string name="title_change_pwd">Change Password</string>
+
+    <string name="title_edit_time">Edit Time</string>
+    <string name="title_profile">Profile</string>
+    <string name="edit_restaurant">Edit Restaurant</string>
+
+
+    <string name="title_order_detail">Order Detail</string>
+
+    <integer-array name="icon_account">
+        <item>@drawable/ic_home</item>
+        <item>@drawable/ic_padlock</item>
+        <item>@drawable/edit_timing</item>
+        <item>@drawable/ic_revenue</item>
+    </integer-array>
+
+
+    <string-array name="title_account">
+        <item>@string/edit_restaurant</item>
+        <item>@string/title_change_pwd</item>
+        <item>@string/title_edit_time</item>
+        <item>@string/title_revenue</item>
+    </string-array>
+
+
+    <!-- Edit Timing -->
+
+    <string-array name="week_days">
+        <item>@string/sund</item>
+        <item>@string/monday</item>
+        <item>@string/tuesday</item>
+        <item>@string/wed</item>
+        <item>@string/thurs</item>
+        <item>@string/frid</item>
+        <item>@string/satu</item>
+    </string-array>
+
+    <string-array name="all_days">
+        <item>@string/all_days</item>
+    </string-array>
+
+
+    <!-- Pages Title -->
+
+
+    <!-- Order accpet detail -->
+    <string name="order_preparation_title">Order Delivery Time?</string>
+    <string name="item_quantity">%s:%d</string>
+
+    <!-- Change Password -->
+    <string name="confrim_password">Confirm password</string>
+    <string name="password_not_matched">Password  does not matched</string>
+    <string name="password_updated">Password Updated Sucessfully</string>
+    <string name="old_password">Old Password</string>
+    <string name="new_password">New Password</string>
+    <string name="create_new_password">Create new password</string>
+    <string name="save">Save</string>
+
+    <!-- History Order detail -->
+    <string name="title_order_placed">Order Placed</string>
+    <string name="title_order_confirmed">Order Confirmed</string>
+    <string name="title_order_proceed">Order Processed</string>
+    <string name="title_order_picked">Order PickedUp</string>
+    <string name="title_order_Delivered">Order Delivered</string>
+    <string name="title_order_Ready">Ready for Delivered</string>
+    <string name="title_order_searching">Searching for Provider</string>
+    <string name="label_order_searching">We have searching for Providers</string>
+    <string name="label_order_recived">We have received your order</string>
+    <string name="label_order_confimred">Your Order has beed Confirmed</string>
+    <string name="label_order_confimred_new">Order has beed Confirmed</string>
+    <string name="label_order_picked">Your order is ready to Pickup</string>
+    <string name="label_order_picked_new">Order is ready to Pickup</string>
+    <string name="label_order_delivered">Your order is delivered successfully</string>
+    <string name="label_order_ready">Order is ready for delivery</string>
+    <string name="label_order_scheduled">Your order has been scheduled</string>
+    <string name="label_order_preparing">We are preparing your order</string>
+    <string name="date">12 Aug</string>
+    <string name="date_with_month">25/10/2001</string>
+    <string name="time">8:00AM</string>
+    <string name="text_user">William Jane</string>
+    <string name="text_loc">United Kingdom</string>
+    <string name="payment">Payment Via</string>
+    <string name="item_order_price">Price</string>
+    <string name="payment_via">PaymentVia</string>
+    <string name="cash">Cash</string>
+    <string name="dollar">$10</string>
+
+    <!--Edit Timing-->
+    <string name="edit_time">Edit Timing</string>
+    <string name="everyday">EveryDay</string>
+    <string name="monday">Monday</string>
+    <string name="tuesday">Tuesday</string>
+    <string name="wed">Wednesday</string>
+    <string name="thurs">Thursday</string>
+    <string name="frid">Friday</string>
+    <string name="satu">Saturday</string>
+    <string name="sund">Sunday</string>
+    <string name="hint">00:00</string>
+    <string name="close">Close Time</string>
+    <string name="open">Open Time</string>
+    <string name="all_days">ALL</string>
+    <string name="day">Day</string>
+
+
+    <!--Order List-->
+
+    <string name="placed">Order Placed</string>
+    <string name="number">#888</string>
+
+
+    <!-- Payment Mode -->
+    <string name="pay_cash">Cash</string>
+    <string name="pay_card">Card</string>
+    <string name="logout_message">Successfully logout</string>
+
+    <!-- History -->
+    <string name="tab_title_ongoing">Ongoing orders</string>
+    <string name="tab_title_past">Past Orders</string>
+    <string name="tab_title_cancel">Cancelled Orders</string>
+
+
+    <!-- Edit Product -->
+
+    <string name="pizza">Pizza</string>
+    <string name="edit_prod">Edit Product</string>
+    <string name="descrp">Description</string>
+    <string name="name">Name</string>
+    <string name="cuisine">Products Cuisine </string>
+    <string name="status">Status</string>
+    <string name="prodOrd">Product Order</string>
+    <string name="cate">Category</string>
+    <string name="imageupload">Image Upload</string>
+    <string name="Profileimageupload">Profile Image</string>
+    <string name="uploadimg">Upload Image</string>
+    <string name="png">You can upload png format. </string>
+    <string name="featureprdt">Is this a featured product?</string>
+    <string name="featureImg">Featured Image Upload</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="next">Next</string>
+    <string name="price">Price</string>
+    <string name="discounttype">DiscountType</string>
+    <string name="nodiscount">Discount</string>
+    <string name="select_addons">Select Addons</string>
+
+    <!--  Profile -->
+
+    <string name="username">UserName</string>
+    <string name="countrycode_hint">Code</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="emailid">Email Id(optional)</string>
+    <string name="city">City</string>
+    <string name="country">Country</string>
+
+
+    <!-- Profile Error Validation -->
+
+    <string name="username_empty">User Name should not be Empty</string>
+    <string name="phonenumber_empty">Phone Number Should not be Empty</string>
+    <string name="code_empty"> Country Code should not be Empty</string>
+    <string name="city_empty">City should not be Empty</string>
+    <string name="country_empty">Country should not be Empty</string>
+    <string name="number_invalid">Phone Number should contains 10 Numbers</string>
+
+    <!--  Edit Restaurant -->
+
+    <string name="shopname">Shop Name</string>
+    <string name="edtcuisine">Cuisine</string>
+    <string name="editres_email">Email</string>
+    <string name="gst">Gst/Tax Percentage(%)</string>
+    <string name="contactPerson">Contact Person</string>
+    <string name="storePackage">Store Package Charge</string>
+    <string name="minAmt">Minimum Amount</string>
+    <string name="offer">Offer in Percentage</string>
+    <string name="comission">Commission Percentage(%)</string>
+    <string name="maxTime">Maximum Delivery Time</string>
+    <string name="store_time">Store Response Time(Sec)</string>
+    <string name="description">Description</string>
+    <string name="flatno">Flat No/Door No</string>
+    <string name="street">Street</string>
+    <string name="landmark">LandMark</string>
+    <string name="location">Location</string>
+    <string name="zone">Zone</string>
+    <string name="zipcode">Zipcode</string>
+    <string name="pure_veg">Is this a pure veg restaurant?</string>
+
+
+    <!--  Select Cuisine -->
+
+    <string name="northindian">North Indian Foods</string>
+    <string name="southindian">South Indian Foods</string>
+    <string name="american">American Foods</string>
+    <string name="arabian">Arabian Foods</string>
+    <string name="bakers">Bakers</string>
+    <string name="asian">Asian</string>
+    <string name="african">African Food</string>
+    <string name="select_cuisine">Select Cuisine</string>
+
+    <!--  Select Cuisine -->
+
+    <string name="status_enable">Enable</string>
+    <string name="status_disable">Disable</string>
+    <string name="title_product">Product</string>
+    <string name="addon_name">AddOn Name</string>
+    <string name="create_addon">Create AddOn</string>
+    <string name="update_addon">Update AddOn</string>
+    <string name="categories">Categories</string>
+    <string name="create_category">Create Category</string>
+    <string name="category_name">Category Name</string>
+    <string name="select_category_image">Select Category Image</string>
+    <string name="category_descritption">Category Description</string>
+    <string name="update_category">Update Category</string>
+    <string name="create_product">Create Product</string>
+    <string name="item_name">Item Name</string>
+    <string name="item_desc">Item Description</string>
+    <string name="save_restaurant_timing_message">Successfully saved your restaurant timings</string>
+    <string name="resaurant_timing_request_invalid_message">Invalid request! Check and correct them</string>
+    <string name="restaurant_time_invalid_message">Check open, close time &amp; checkbox</string>
+    <string name="open_close_time_compare_validation">Closing time required at-least 1Hour after open time</string>
+    <string name="open_time">Open Time</string>
+    <string name="close_time">Close Time</string>
+    <string name="total_revenue">Total Revenue</string>
+    <string name="order_received">Order Received</string>
+    <string name="order_delivered">Order Delivered</string>
+    <string name="today_earnings">Today Earnings</string>
+    <string name="monthly_earnings">Monthly Earnings</string>
+    <string name="pinch_zoom_message">* Pinch zoom available</string>
+    <string name="price_selection">Product Price</string>
+
+
+    // BAR CHART
+    <string-array name="months">
+        <item>Jan</item>
+        <item>Feb</item>
+        <item>Mar</item>
+        <item>Apr</item>
+        <item>May</item>
+        <item>Jun</item>
+        <item>Jul</item>
+        <item>Aug</item>
+        <item>Sep</item>
+        <item>Oct</item>
+        <item>Nov</item>
+        <item>Dec</item>
+    </string-array>
+    <string name="password">Password</string>
+    <string name="edit_shop">Edit Shop</string>
+    <string name="search_city">Search city</string>
+    <string name="please_enter_cooking_time">Please enter cooking time</string>
+
+
+</resources>

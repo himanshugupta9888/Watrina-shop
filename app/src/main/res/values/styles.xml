@@ -1,0 +1,106 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowBackground">@color/windowBackground</item>
+        <item name="android:fontFamily">@font/avenirltstd_medium</item>
+        <item name="android:textCursorDrawable">@drawable/input_cursor</item>
+    </style>
+
+    <style name="AppTheme.TextFloatLabelAppearance" parent="TextAppearance.Design.Hint">
+        <!-- Floating label appearance here -->
+        <item name="android:textColor">@color/colorBlack</item>
+        <item name="android:textSize">@dimen/_10sdp</item>
+        <item name="android:textAppearance">@font/avenirltstd_bold</item>
+    </style>
+
+    <style name="AppTheme.TextErrorAppearance" parent="TextAppearance.Design.Error">
+        <!-- Error message appearance here -->
+        <item name="android:textColor">#ff0000</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+
+
+    <style name="Edit_Text_Outlined_Theme" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeColor">@color/colorBlack</item>
+        <item name="boxBackgroundColor">@color/colorWhite</item>
+        <item name="hintTextColor">@color/colorBlack</item>
+        <item name="boxBackgroundMode">outline</item>
+        <item name="boxCornerRadiusBottomEnd">@dimen/boxCornerRadius</item>
+       <item name="boxCornerRadiusBottomStart">@dimen/boxCornerRadius</item>
+
+        <item name="boxCornerRadiusTopEnd">@dimen/boxCornerRadius</item>
+        <item name="boxCornerRadiusTopStart">@dimen/boxCornerRadius</item>
+        <item name="android:textSize">@dimen/_10sdp</item>
+        <item name="hintTextAppearance">@style/AppTheme.TextFloatLabelAppearance</item>
+        <item name="errorTextAppearance">@style/AppTheme.TextErrorAppearance</item>
+        <item name="android:textStyle">bold</item>
+
+        <item name="android:strokeColor">@color/colorBlack
+        </item>
+        <item name="android:fontFamily">@font/avenirltstd_medium</item>
+
+
+        <item name="boxStrokeWidthFocused">1dp</item>
+        <item name="errorIconDrawable">@null</item>
+        <item name="boxStrokeErrorColor">@color/colorError</item>
+        <item name="errorTextColor">@color/colorError</item>
+    </style>
+
+
+    <style name="TextInputLayoutHintText" parent="TextAppearance.Design.Hint">
+        <item name="android:textColor">@color/colorBlack</item>
+        <item name="android:textSize">@dimen/_10sdp</item>
+        <item name="android:fontFamily">@font/avenirltstd_medium</item> </style>
+
+    <style name="TextInputLayoutHelperText" parent="TextAppearance.Design.HelperText">
+        <item name="android:fontFamily">@font/avenirltstd_medium</item>
+    </style>
+
+    <style name="TextInputEditText.OutlinedBox.CustomFont" parent="Widget.MaterialComponents.TextInputEditText.OutlinedBox">
+        <item name="android:fontFamily">@font/avenirltstd_medium</item>
+    </style>
+
+    <style name="TextInputLayoutErrorText" parent="TextAppearance.Design.Error">
+        <item name="android:textColor">#ff0000</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:fontFamily">@font/avenirltstd_medium</item>    </style>
+
+    <!-- ToolBar -->
+    <style name="ToolBarStyle" parent="Theme.AppCompat">
+        <item name="android:textColorPrimary">@android:color/white</item>
+        <item name="android:textColorSecondary">@android:color/white</item>
+        <item name="actionMenuTextColor">@android:color/white</item>
+    </style>
+
+    <style name="MediumText" parent="@android:style/TextAppearance.Medium">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/_14sdp</item>
+        <item name="android:fontFamily">@font/avenirltstd_medium</item>
+    </style>
+
+    <style name="CustomActivityAnimation" parent="@android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/slide_in_right</item>
+        <item name="android:activityCloseEnterAnimation">@anim/slide_in_left</item>
+    </style>
+
+    <style name="SmallText" parent="@android:style/TextAppearance.Small">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/_12sdp</item>
+        <item name="android:fontFamily">@font/avenirltstd_medium</item>
+    </style>
+
+    <style name="TabLayoutTextFont" parent="@android:style/TextAppearance.Widget.TabWidget">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="fontFamily">@font/avenirltstd_medium</item>
+        <item name="android:textSize">@dimen/_10sdp</item>
+    </style>
+
+</resources>

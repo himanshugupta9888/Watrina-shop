@@ -1,0 +1,975 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="editRestaurantViewModel"
+            type="com.watirna.shop.views.editrestaurant.EditRestaurantViewModel" />
+    </data>
+
+<androidx.appcompat.widget.LinearLayoutCompat
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorWhite">
+
+    <include layout="@layout/toolbar_main"
+        android:id="@+id/editRestaurantToolbar">
+
+    </include>
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="8dp"
+            android:orientation="vertical"
+            android:paddingBottom="8dp">
+
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cdViewEditRestaurant"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardUseCompatPadding="true"
+            app:cardPreventCornerOverlap="true"
+            android:padding="10dp"
+            app:cardElevation="4dp"
+            app:layout_constraintTop_toBottomOf="@+id/scrollView">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/edtxtName"
+                    style="@style/Edit_Text_Outlined_Theme"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:layout_marginEnd="@dimen/_8sdp"
+                    android:hint="@string/name"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        style="@style/SmallText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:text="@={editRestaurantViewModel.shopName}"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/et_textsize"
+                        android:textStyle="bold"
+                        tools:ignore="RtlSymmetry" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <LinearLayout
+                    android:id="@+id/linearPhoneNumb"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:baselineAligned="false"
+                    android:orientation="horizontal"
+                    app:layout_constraintTop_toBottomOf="@+id/edtxtName">
+
+                    <!--TextInputLayout country code -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Edit_Text_Outlined_Theme"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:layout_marginEnd="@dimen/_8sdp"
+                        android:layout_weight="1"
+                        android:hint="@string/countrycode_hint"
+                        android:focusableInTouchMode="false"
+                        app:boxCornerRadiusBottomEnd="1dp"
+                        app:boxCornerRadiusTopEnd="1dp"
+                        tools:ignore="NestedWeights">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/countrycode_register_et"
+                            style="@style/SmallText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:drawableStart="@drawable/ic_us"
+                            android:drawablePadding="@dimen/_3sdp"
+                            android:focusable="true"
+                            android:focusableInTouchMode="false"
+                            android:inputType="number"
+                            android:onClick="@{()->editRestaurantViewModel.gotoCountryPicker()}"
+                            android:text="@={editRestaurantViewModel.country_code}"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/et_textsize"
+                            android:textStyle="bold" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!--TextInputLayout Phonenum-->
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Edit_Text_Outlined_Theme"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:layout_weight="1.4"
+                        android:hint="@string/phone_number"
+                        app:boxCornerRadiusBottomStart="0dp"
+                        app:boxCornerRadiusTopStart="0dp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/phonenumber_register_et"
+                            style="@style/SmallText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/_8sdp"
+                            android:inputType="phone"
+                            android:maxLength="10"
+                            android:maxLines="1"
+                            android:text="@={editRestaurantViewModel.phoneNumber}"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/et_textsize"
+                            android:textStyle="bold" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/edtTxtEmail"
+                    style="@style/Edit_Text_Outlined_Theme"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:hint="@string/editres_email"
+                    app:layout_constraintTop_toBottomOf="@+id/linearPhoneNumb">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        style="@style/SmallText"
+                        android:layout_width="match_parent"
+                        android:layout_height="59dp"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:layout_marginEnd="@dimen/_8sdp"
+                        android:imeOptions="actionNext"
+                        android:inputType="textEmailAddress"
+                        android:singleLine="true"
+                        android:text="@={editRestaurantViewModel.email}"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/et_textsize"
+                        android:textStyle="bold" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/edtTxtCountry"
+                    style="@style/Edit_Text_Outlined_Theme"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_marginEnd="@dimen/_8sdp"
+                    android:hint="@string/country"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/edtTxtEmail">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edtTxtCountryName"
+                        style="@style/SmallText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:imeOptions="actionNext"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:focusableInTouchMode="false"
+                        android:cursorVisible="false"
+                        android:text="@={editRestaurantViewModel.country}"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/et_textsize"
+                        android:textStyle="bold"
+                        tools:ignore="RtlSymmetry" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/edtxtCity"
+                    style="@style/Edit_Text_Outlined_Theme"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_marginEnd="@dimen/_8sdp"
+                    android:hint="@string/city"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/edtTxtCountry">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edtTextCity"
+                        style="@style/SmallText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:cursorVisible="false"
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:text="@={editRestaurantViewModel.city}"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/et_textsize"
+                        android:textStyle="bold"
+                        tools:ignore="RtlSymmetry" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/edtxtCuisine"
+                    style="@style/Edit_Text_Outlined_Theme"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_marginEnd="@dimen/_8sdp"
+                    android:hint="@string/edtcuisine"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/edtxtCity">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/Cuisine"
+                        style="@style/SmallText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:imeOptions="actionNext"
+                        android:inputType="none"
+                        android:focusableInTouchMode="false"
+                        android:cursorVisible="false"
+                        android:text="@={editRestaurantViewModel.cuisine}"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/et_textsize"
+                        android:textStyle="bold"
+                        tools:ignore="RtlSymmetry" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/edtxtGST"
+                    style="@style/Edit_Text_Outlined_Theme"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_marginEnd="@dimen/_8sdp"
+                    android:hint="@string/gst"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/edtxtCuisine">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        style="@style/SmallText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:text="@={editRestaurantViewModel.gst}"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/et_textsize"
+                        android:textStyle="bold"
+                        tools:ignore="RtlSymmetry" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/edtxtContactPerson"
+                    style="@style/Edit_Text_Outlined_Theme"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_marginEnd="@dimen/_8sdp"
+                    android:hint="@string/contactPerson"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/edtxtGST">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        style="@style/SmallText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:text="@={editRestaurantViewModel.contactPerson}"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/et_textsize"
+                        android:textStyle="bold"
+                        tools:ignore="RtlSymmetry" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/edtxtStorePackage"
+                    style="@style/Edit_Text_Outlined_Theme"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_marginEnd="@dimen/_8sdp"
+                    android:hint="@string/storePackage"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/edtxtContactPerson">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        style="@style/SmallText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:text="@={editRestaurantViewModel.storePackageCharge}"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/et_textsize"
+                        android:textStyle="bold"
+                        tools:ignore="RtlSymmetry" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <RelativeLayout
+                    android:id="@+id/status_lay"
+                    android:layout_width="match_parent"
+                    android:layout_height="65dp"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:layout_marginEnd="@dimen/_8sdp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/edtxtStorePackage">
+
+                    <Spinner
+                        android:id="@+id/status_spinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/txtstatus"
+                        android:layout_marginTop="-12dp"
+                        android:layout_centerInParent="true"
+                        android:background="@drawable/bg_text_input_lay_style"
+                        android:outlineAmbientShadowColor="@color/black"
+                        android:paddingLeft="@dimen/_5sdp"
+                        android:paddingTop="@dimen/_10sdp"
+                        android:paddingBottom="@dimen/_10sdp"/>
+
+
+                    <TextView
+                        android:id="@+id/txtstatus"
+                        android:text="Status"
+                        android:textSize="@dimen/_10sdp"
+                        android:padding="@dimen/_5sdp"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"/>
+                </RelativeLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/edtxtMinAmt"
+                    style="@style/Edit_Text_Outlined_Theme"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_marginEnd="@dimen/_8sdp"
+                    android:hint="@string/minAmt"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/status_lay">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        style="@style/SmallText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:text="@={editRestaurantViewModel.minimumAmount}"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/et_textsize"
+                        android:textStyle="bold"
+                        tools:ignore="RtlSymmetry" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/edtxtOffer"
+                    style="@style/Edit_Text_Outlined_Theme"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_marginEnd="@dimen/_8sdp"
+                    android:hint="@string/offer"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/edtxtMinAmt">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        style="@style/SmallText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:text="@={editRestaurantViewModel.offer}"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/et_textsize"
+                        android:textStyle="bold"
+                        tools:ignore="RtlSymmetry" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/edtxtComission"
+                    style="@style/Edit_Text_Outlined_Theme"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_marginEnd="@dimen/_8sdp"
+                    android:hint="@string/comission"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/edtxtOffer">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        style="@style/SmallText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:text="@={editRestaurantViewModel.commission}"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/et_textsize"
+                        android:textStyle="bold"
+                        tools:ignore="RtlSymmetry" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/edtxtMaximumTime"
+                    style="@style/Edit_Text_Outlined_Theme"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_marginEnd="@dimen/_8sdp"
+                    android:hint="@string/maxTime"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/edtxtComission">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        style="@style/SmallText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:text="@={editRestaurantViewModel.maximumDeliveryTime}"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/et_textsize"
+                        android:textStyle="bold"
+                        tools:ignore="RtlSymmetry" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/edtxtStoreResponseTime"
+                    style="@style/Edit_Text_Outlined_Theme"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_marginEnd="@dimen/_8sdp"
+                    android:hint="@string/store_time"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/edtxtMaximumTime">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        style="@style/SmallText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:imeOptions="actionNext"
+                        android:inputType="number"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:text="@={editRestaurantViewModel.stroeResponseTime}"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/et_textsize"
+                        android:textStyle="bold"
+                        tools:ignore="RtlSymmetry" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/edtxtDesc"
+                    style="@style/Edit_Text_Outlined_Theme"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_marginEnd="@dimen/_8sdp"
+                    android:hint="@string/description"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/edtxtStoreResponseTime">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        style="@style/SmallText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:text="@={editRestaurantViewModel.description}"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/et_textsize"
+                        android:textStyle="bold"
+                        tools:ignore="RtlSymmetry" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/edtxtFlatno"
+                    style="@style/Edit_Text_Outlined_Theme"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_marginEnd="@dimen/_8sdp"
+                    android:hint="@string/flatno"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/edtxtDesc">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        style="@style/SmallText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:imeOptions="actionNext"
+                        android:inputType="number"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:text="@={editRestaurantViewModel.flatno}"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/et_textsize"
+                        android:textStyle="bold"
+                        tools:ignore="RtlSymmetry" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/edtxtStreet"
+                    style="@style/Edit_Text_Outlined_Theme"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_marginEnd="@dimen/_8sdp"
+                    android:hint="@string/street"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/edtxtFlatno">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        style="@style/SmallText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:text="@={editRestaurantViewModel.street}"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/et_textsize"
+                        android:textStyle="bold"
+                        tools:ignore="RtlSymmetry" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <RelativeLayout
+                    android:id="@+id/Location_lay"
+                    android:layout_width="match_parent"
+                    android:layout_height="65dp"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:layout_marginEnd="@dimen/_8sdp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/edtxtStreet"
+                    android:visibility="visible">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/auto_txt_location"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_text_input_lay_style"
+                        android:textSize="@dimen/_10sdp"
+                        android:hint="Enter Location"
+                        android:text="@={editRestaurantViewModel.landMark}"
+                        android:singleLine="true"
+                        android:layout_below="@+id/txtLocation"
+                        android:layout_marginTop="-12dp"
+                        android:paddingTop="@dimen/_15sdp"
+                        android:paddingBottom="@dimen/_15sdp"
+                        android:paddingLeft="@dimen/_10sdp"
+                        android:layout_centerInParent="true"
+                        android:visibility="visible"/>
+
+                    <ImageView
+                        android:id="@+id/edit_location"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:tint="@color/black"
+                        android:layout_marginRight="@dimen/_3sdp"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:padding="@dimen/_8sdp"
+                        android:layout_alignParentEnd="true"
+                        android:visibility="visible"
+                        android:src="@drawable/ic_edit_draw_pencil"/>
+
+                    <TextView
+                        android:id="@+id/txtLocation"
+                        android:text="Location"
+                        android:textSize="@dimen/_10sdp"
+                        android:padding="@dimen/_5sdp"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"/>
+                </RelativeLayout>
+
+                <!--<com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/edtxtLandMark"
+                    style="@style/Edit_Text_Outlined_Theme"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_marginEnd="@dimen/_8sdp"
+                    android:hint="@string/location"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/edtxtStreet">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        style="@style/SmallText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:text="@={editRestaurantViewModel.landMark}"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/et_textsize"
+                        android:textStyle="bold"
+                        tools:ignore="RtlSymmetry" />
+
+                </com.google.android.material.textfield.TextInputLayout>-->
+
+                <!--<com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/edtxtZone"
+                    style="@style/Edit_Text_Outlined_Theme"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_marginEnd="@dimen/_8sdp"
+                    android:hint="@string/zone"
+                    app:layout_constraintStart_toStartOf="parent"
+
+                    app:layout_constraintTop_toBottomOf="@+id/edtxtLandMark">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        style="@style/SmallText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:text="@={editRestaurantViewModel.zone}"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/et_textsize"
+                        tools:ignore="RtlSymmetry" />
+
+                </com.google.android.material.textfield.TextInputLayout>-->
+
+                <RelativeLayout
+                    android:id="@+id/zone_lay"
+                    android:layout_width="match_parent"
+                    android:layout_height="65dp"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:layout_marginEnd="@dimen/_8sdp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/Location_lay">
+
+                    <Spinner
+                        android:id="@+id/zone_spinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/txtzone"
+                        android:layout_marginTop="-12dp"
+                        android:layout_centerInParent="true"
+                        android:background="@drawable/bg_text_input_lay_style"
+                        android:outlineAmbientShadowColor="@color/black"
+                        android:paddingLeft="@dimen/_5sdp"
+                        android:paddingTop="@dimen/_10sdp"
+                        android:paddingBottom="@dimen/_10sdp"/>
+
+
+                    <TextView
+                        android:id="@+id/txtzone"
+                        android:text="@string/zone"
+                        android:textSize="@dimen/_10sdp"
+                        android:padding="@dimen/_5sdp"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"/>
+                </RelativeLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/edtxtZipCode"
+                    style="@style/Edit_Text_Outlined_Theme"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_marginEnd="@dimen/_8sdp"
+                    android:hint="@string/zipcode"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/zone_lay">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        style="@style/SmallText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_15sdp"
+                        android:imeOptions="actionNext"
+                        android:inputType="number"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:text="@={editRestaurantViewModel.zipCode}"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/et_textsize"
+                        android:textStyle="bold"
+                        tools:ignore="RtlSymmetry" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cdViewImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="@dimen/_15sdp"
+                    app:cardElevation="4dp"
+                    app:cardUseCompatPadding="true"
+                    app:layout_constraintTop_toBottomOf="@+id/edtxtZipCode">
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_ash">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/txtImageUpload"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:fontFamily="@font/avenirltstd_medium"
+                            android:text="@string/Profileimageupload"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_12sdp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                        </androidx.appcompat.widget.AppCompatTextView>
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/imgUpload"
+                            android:layout_width="@dimen/_80sdp"
+                            android:layout_height="@dimen/_60sdp"
+                            android:scaleType="fitXY"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:background="@drawable/ic_imageupload"
+                            app:layout_constraintStart_toStartOf="@+id/txtImageUpload"
+                            app:layout_constraintTop_toBottomOf="@+id/txtImageUpload">
+
+                        </androidx.appcompat.widget.AppCompatImageView>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/txtUploadImage"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:layout_marginTop="@dimen/_14sdp"
+                            android:fontFamily="@font/avenirltstd_medium"
+                            android:text="@string/uploadimg"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_12sdp"
+                            android:textStyle="bold"
+                            app:layout_constraintLeft_toRightOf="@+id/imgUpload"
+                            app:layout_constraintTop_toBottomOf="@+id/txtImageUpload"
+                            tools:text="@string/uploadimg">
+
+                        </androidx.appcompat.widget.AppCompatTextView>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/txtPng"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:fontFamily="@font/avenirltstd_medium"
+                            android:text="@string/png"
+                            android:textColor="@color/grey"
+                            android:textSize="@dimen/_10sdp"
+                            app:layout_constraintStart_toStartOf="@+id/txtUploadImage"
+                            app:layout_constraintTop_toBottomOf="@+id/txtUploadImage"
+                            tools:text="@string/png">
+
+                        </androidx.appcompat.widget.AppCompatTextView>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txtPureVeg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:fontFamily="@font/avenirltstd_medium"
+                    android:text="@string/pure_veg"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/_10sdp"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    app:layout_constraintStart_toStartOf="@id/cdViewImage"
+                    app:layout_constraintTop_toBottomOf="@+id/cdViewImage"
+                    tools:text="@string/pure_veg">
+
+                </androidx.appcompat.widget.AppCompatTextView>
+
+                <RadioGroup
+                    android:id="@+id/radio_group"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_15sdp"
+                    app:layout_constraintStart_toStartOf="@+id/txtPureVeg"
+                    app:layout_constraintTop_toBottomOf="@+id/txtPureVeg"
+                    tools:ignore="MissingConstraints">
+
+                    <RadioButton
+                        android:id="@+id/chckYes"
+                        android:text="Yes"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <RadioButton
+                        android:id="@+id/chckNo"
+                        android:text="No"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+                </RadioGroup>
+
+                <!--<androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@+id/chckYes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@color/colorBlack"
+                    android:scaleX="1"
+                    android:scaleY="1"
+                    app:layout_constraintStart_toStartOf="@+id/txtPureVeg"
+                    app:layout_constraintTop_toBottomOf="@+id/txtPureVeg">
+
+                </androidx.appcompat.widget.AppCompatRadioButton>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txtYes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:fontFamily="@font/avenirltstd_medium"
+                    android:text="@string/yes"
+                    android:textColor="@color/colorBlack"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/_12sdp"
+                    app:layout_constraintLeft_toRightOf="@+id/chckYes"
+                    app:layout_constraintTop_toBottomOf="@+id/txtPureVeg"
+                    tools:text="@string/yes">
+
+                </androidx.appcompat.widget.AppCompatTextView>
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@+id/chckNo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@color/colorBlack"
+                    android:scaleX="1"
+                    android:scaleY="1"
+                    app:layout_constraintStart_toStartOf="@+id/chckYes"
+                    app:layout_constraintTop_toBottomOf="@+id/chckYes">
+
+                </androidx.appcompat.widget.AppCompatRadioButton>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txtNo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_25sdp"
+                    android:text="@string/no"
+                    android:textColor="@color/colorBlack"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/_12sdp"
+                    app:layout_constraintLeft_toRightOf="@+id/chckNo"
+                    app:layout_constraintTop_toBottomOf="@+id/txtYes"
+                    tools:text="@string/no" />-->
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSave"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_margin="8dp"
+                android:layout_marginBottom="@dimen/_15sdp"
+                android:backgroundTint="@color/colorPrimary"
+                android:onClick="@{()->editRestaurantViewModel.validateInputs()}"
+                android:text="@string/save"
+                app:cornerRadius="32dp" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>
+
+</layout>

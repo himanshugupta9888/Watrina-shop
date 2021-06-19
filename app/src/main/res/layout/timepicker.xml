@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="timePickerDialog"
+            type="com.watirna.shop.views.dialogs.ShopTimeDialog" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <TimePicker
+        android:id="@+id/timePicker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:timePickerMode="spinner"/>
+
+        <Button
+            android:id="@+id/butOk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="28dp"
+            android:gravity="center"
+            android:text="@string/Ok"
+            android:background="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/timePicker">
+
+        </Button>
+
+        <Button
+            android:id="@+id/butCancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="32dp"
+            android:text="@string/cancel"
+            android:background="@color/black"
+            app:layout_constraintLeft_toRightOf="@+id/butOk"
+            app:layout_constraintTop_toBottomOf="@+id/timePicker">
+
+        </Button>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="?android:attr/actionBarSize"
+    android:background="@color/white"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+        <ImageView
+            android:id="@+id/iv_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:tint="@color/black"
+            android:contentDescription="@string/app_name"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:padding="@dimen/_8sdp"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/back" />
+
+        <TextView
+            android:id="@+id/tbr_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/avenirltstd_medium"
+            android:layout_toRightOf="@+id/iv_left"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_15sdp"
+            android:layout_centerVertical="true"
+            android:textStyle="bold"/>
+
+        <ImageView
+            android:id="@+id/iv_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:tint="@color/black"
+            android:contentDescription="@string/app_name"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:padding="@dimen/_8sdp"
+            android:src="@drawable/ic_logout"
+            android:visibility="gone"/>
+
+</RelativeLayout>

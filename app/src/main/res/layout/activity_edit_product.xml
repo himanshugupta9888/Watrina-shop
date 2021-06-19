@@ -1,0 +1,529 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="editProduct"
+            type="com.watirna.shop.views.product.productDML.edit.editproduct.EditProductViewModel" />
+    </data>
+
+
+    <LinearLayout
+        android:id="@+id/toplayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/edProTool"
+            layout="@layout/header_toolbar" />
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="vertical"
+                android:paddingBottom="8dp">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cdView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardBackgroundColor="@color/colorWhite"
+                    app:cardElevation="2dp"
+                    app:cardUseCompatPadding="true">
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/edtxtName"
+                            style="@style/Edit_Text_Outlined_Theme"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_8sdp"
+                            android:layout_marginTop="@dimen/_12sdp"
+                            android:layout_marginEnd="@dimen/_8sdp"
+                            android:hint="@string/name">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                style="@style/SmallText"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:imeOptions="actionNext"
+                                android:inputType="text"
+                                android:maxLines="1"
+                                android:text="@={editProduct.productName}"
+                                android:paddingStart="@dimen/_20sdp"
+                                android:singleLine="true"
+                                android:textColor="@color/et_text_color"
+                                android:textSize="@dimen/et_textsize">
+
+                            </com.google.android.material.textfield.TextInputEditText>
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/edtxtDesc"
+                            style="@style/Edit_Text_Outlined_Theme"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_8sdp"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:layout_marginEnd="@dimen/_8sdp"
+                            android:hint="@string/descrp">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                style="@style/SmallText"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:imeOptions="actionNext"
+                                android:inputType="text"
+                                android:maxLines="1"
+                                android:text="@={editProduct.descriptionString}"
+                                android:paddingStart="@dimen/_20sdp"
+                                android:singleLine="true"
+                                android:textColor="@color/et_text_color"
+                                android:textSize="@dimen/et_textsize">
+
+                            </com.google.android.material.textfield.TextInputEditText>
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/edtxtProd"
+                            style="@style/Edit_Text_Outlined_Theme"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:visibility="gone"
+                            android:layout_marginStart="@dimen/_8sdp"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:layout_marginEnd="@dimen/_8sdp"
+                            android:hint="@string/cuisine">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/edtxtProd_Cuisine"
+                                style="@style/SmallText"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:drawableEnd="@drawable/ic_arrow_drop_down"
+                                android:cursorVisible="false"
+                                android:focusable="false"
+                                android:imeOptions="actionNext"
+                                android:inputType="text"
+                                android:text="@={editProduct.cuisuieName}"
+                                android:maxLines="1"
+                                android:paddingStart="@dimen/_20sdp"
+                                android:singleLine="true"
+                                android:textColor="@color/et_text_color"
+                                android:textSize="@dimen/et_textsize">
+
+                            </com.google.android.material.textfield.TextInputEditText>
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/edtxtStatus"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/title"
+                            android:layout_margin="@dimen/_10sdp"
+                            app:cardCornerRadius="@dimen/_25sdp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/edtxtProd">
+
+                            <Spinner
+                                android:id="@+id/statusSpinner"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:outlineAmbientShadowColor="@color/black"
+                                android:paddingLeft="@dimen/_10sdp" />
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/edtxtFoodType"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/title"
+                            android:layout_margin="@dimen/_10sdp"
+                            app:cardCornerRadius="@dimen/_25sdp">
+
+                            <Spinner
+                                android:id="@+id/foodTypeSpinner"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:outlineAmbientShadowColor="@color/black"
+                                android:paddingLeft="@dimen/_10sdp" />
+                        </androidx.cardview.widget.CardView>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/edtxtProdOrder"
+                            style="@style/Edit_Text_Outlined_Theme"
+                            android:visibility="gone"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:hint="@string/prodOrd">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                style="@style/SmallText"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_8sdp"
+                                android:layout_marginEnd="@dimen/_8sdp"
+                                android:imeOptions="actionNext"
+                                android:inputType="text"
+                                android:text="@={editProduct.productOrder}"
+                                android:maxLines="1"
+                                android:paddingStart="@dimen/_20sdp"
+                                android:singleLine="true"
+                                android:textColor="@color/et_text_color"
+                                android:textSize="@dimen/et_textsize">
+
+                            </com.google.android.material.textfield.TextInputEditText>
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/edtxtCat"
+                            style="@style/Edit_Text_Outlined_Theme"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:hint="@string/cate">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/tv_product_category"
+                                style="@style/SmallText"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_8sdp"
+                                android:layout_marginEnd="@dimen/_8sdp"
+                                android:drawableEnd="@drawable/ic_arrow_drop_down"
+                                android:imeOptions="actionNext"
+                                android:inputType="text"
+                                android:cursorVisible="false"
+                                android:focusable="false"
+                                android:text="@={editProduct.categroyString}"
+                                android:maxLines="1"
+                                android:paddingStart="@dimen/_20sdp"
+                                android:singleLine="true"
+                                android:textColor="@color/et_text_color"
+                                android:textSize="@dimen/et_textsize">
+
+                            </com.google.android.material.textfield.TextInputEditText>
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/edttxtquantity"
+                            style="@style/Edit_Text_Outlined_Theme"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_8sdp"
+                            android:layout_marginTop="@dimen/_12sdp"
+                            android:layout_marginEnd="@dimen/_8sdp"
+                            android:hint="Quantity">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                style="@style/SmallText"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:imeOptions="actionNext"
+                                android:inputType="number"
+                                android:maxLines="1"
+                                android:maxLength="5"
+                                android:text="@={editProduct.quantity}"
+                                android:paddingStart="@dimen/_20sdp"
+                                android:singleLine="true"
+                                android:textColor="@color/et_text_color"
+                                android:textSize="@dimen/et_textsize">
+
+                            </com.google.android.material.textfield.TextInputEditText>
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/unit_lay"
+                            android:layout_width="match_parent"
+                            android:layout_height="65dp"
+                            android:layout_marginStart="@dimen/_8sdp"
+                            android:layout_marginTop="@dimen/_12sdp"
+                            android:layout_marginEnd="@dimen/_8sdp"
+                            android:padding="2dp"
+                            app:layout_constraintStart_toStartOf="parent">
+
+                            <Spinner
+                                android:id="@+id/unit_spinner"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/txtstatus"
+                                android:layout_centerInParent="true"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:background="@drawable/bg_text_input_lay_style"
+                                android:outlineAmbientShadowColor="@color/black"
+                                android:paddingLeft="@dimen/_10sdp"
+                                android:paddingTop="@dimen/_4sdp"
+                                android:paddingBottom="@dimen/_4sdp"/>
+
+
+                            <TextView
+                                android:id="@+id/txtunit"
+                                android:text="Unit"
+                                android:textSize="@dimen/_10sdp"
+                                android:paddingLeft="@dimen/_5sdp"
+                                android:paddingRight="@dimen/_5sdp"
+                                android:layout_marginStart="@dimen/_15sdp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@color/white"/>
+                        </RelativeLayout>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cdViewImage"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:cardCornerRadius="@dimen/_15sdp"
+                            app:cardElevation="4dp"
+                            app:cardUseCompatPadding="true"
+                            app:layout_constraintTop_toBottomOf="@+id/edtxtCat">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/bg_ash">
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/txtImageUpload"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/_10sdp"
+                                    android:layout_marginTop="@dimen/_5sdp"
+                                    android:fontFamily="@font/avenirltstd_medium"
+                                    android:text="@string/imageupload"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/_14sdp"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent">
+
+                                </androidx.appcompat.widget.AppCompatTextView>
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:id="@+id/imgUpload"
+                                    android:layout_width="@dimen/_80sdp"
+                                    android:layout_height="@dimen/_60sdp"
+                                    android:scaleType="fitXY"
+                                    android:layout_marginTop="@dimen/_10sdp"
+                                    android:background="@drawable/ic_imageupload"
+                                    app:layout_constraintStart_toStartOf="@+id/txtImageUpload"
+                                    app:layout_constraintTop_toBottomOf="@+id/txtImageUpload">
+
+                                </androidx.appcompat.widget.AppCompatImageView>
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/txtUploadImage"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/_10sdp"
+                                    android:layout_marginTop="@dimen/_14sdp"
+                                    android:fontFamily="@font/avenirltstd_medium"
+                                    android:text="@string/uploadimg"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/_10sdp"
+                                    android:textStyle="bold"
+                                    app:layout_constraintLeft_toRightOf="@+id/imgUpload"
+                                    app:layout_constraintTop_toBottomOf="@+id/txtImageUpload"
+                                    tools:text="@string/uploadimg">
+
+                                </androidx.appcompat.widget.AppCompatTextView>
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/txtPng"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/_5sdp"
+                                    android:fontFamily="@font/avenirltstd_medium"
+                                    android:text="@string/png"
+                                    android:textColor="@color/grey"
+                                    android:textSize="@dimen/_10sdp"
+                                    app:layout_constraintStart_toStartOf="@+id/txtUploadImage"
+                                    app:layout_constraintTop_toBottomOf="@+id/txtUploadImage"
+                                    tools:text="@string/png">
+
+                                </androidx.appcompat.widget.AppCompatTextView>
+
+
+                                <!--<androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/txtFeaturePrdt"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/_10sdp"
+                                    android:fontFamily="@font/avenirltstd_medium"
+                                    android:text="@string/featureprdt"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/_14sdp"
+                                    app:layout_constraintStart_toStartOf="@+id/imgUpload"
+                                    app:layout_constraintTop_toBottomOf="@id/imgUpload"
+                                    tools:text="@string/featureprdt">
+
+                                </androidx.appcompat.widget.AppCompatTextView>
+
+                                <androidx.appcompat.widget.AppCompatRadioButton
+                                    android:id="@+id/chckYes"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:buttonTint="@color/colorAccent"
+                                    android:checked="true"
+                                    android:scaleX="0.5"
+                                    android:scaleY="0.5"
+                                    app:layout_constraintStart_toStartOf="@+id/txtFeaturePrdt"
+                                    app:layout_constraintTop_toBottomOf="@+id/txtFeaturePrdt">
+
+                                </androidx.appcompat.widget.AppCompatRadioButton>
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/txtYes"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/_10sdp"
+                                    android:fontFamily="@font/avenirltstd_medium"
+                                    android:text="@string/yes"
+                                    android:textColor="@color/grey"
+                                    android:textSize="@dimen/_14sdp"
+                                    app:layout_constraintLeft_toRightOf="@+id/chckYes"
+                                    app:layout_constraintTop_toBottomOf="@+id/txtFeaturePrdt"
+                                    tools:text="@string/yes">
+
+                                </androidx.appcompat.widget.AppCompatTextView>
+
+                                <androidx.appcompat.widget.AppCompatRadioButton
+                                    android:id="@+id/chckNo"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:buttonTint="@color/colorAccent"
+                                    android:scaleX="0.5"
+                                    android:scaleY="0.5"
+                                    app:layout_constraintStart_toStartOf="@+id/chckYes"
+                                    app:layout_constraintTop_toBottomOf="@+id/chckYes">
+
+                                </androidx.appcompat.widget.AppCompatRadioButton>
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/txtNo"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/_20sdp"
+                                    android:text="@string/no"
+                                    android:textColor="@color/grey"
+                                    android:textSize="@dimen/_14sdp"
+                                    app:layout_constraintLeft_toRightOf="@+id/chckNo"
+                                    app:layout_constraintTop_toBottomOf="@+id/txtYes"
+                                    tools:text="@string/no" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/txtFeatureImg"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/avenirltstd_medium"
+                                    android:text="@string/featureImg"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/_14sdp"
+                                    app:layout_constraintStart_toStartOf="@id/chckNo"
+                                    app:layout_constraintTop_toBottomOf="@+id/chckNo"
+                                    tools:text="@string/featureImg">
+
+                                </androidx.appcompat.widget.AppCompatTextView>
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:id="@+id/imgFeatureUpload"
+                                    android:layout_width="@dimen/_80sdp"
+                                    android:layout_height="@dimen/_60sdp"
+                                    android:scaleType="fitXY"
+                                    android:layout_marginTop="@dimen/_10sdp"
+                                    android:background="@drawable/ic_imageupload"
+                                    app:layout_constraintStart_toStartOf="@+id/txtImageUpload"
+                                    app:layout_constraintTop_toBottomOf="@+id/txtFeatureImg">
+
+                                </androidx.appcompat.widget.AppCompatImageView>
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/txtFeatImgUpload"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/_10sdp"
+                                    android:layout_marginTop="@dimen/_14sdp"
+                                    android:fontFamily="@font/avenirltstd_medium"
+                                    android:text="@string/uploadimg"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/_10sdp"
+                                    android:textStyle="bold"
+                                    app:layout_constraintLeft_toRightOf="@+id/imgFeatureUpload"
+                                    app:layout_constraintTop_toBottomOf="@+id/txtFeatureImg"
+                                    tools:text="@string/uploadimg">
+
+                                </androidx.appcompat.widget.AppCompatTextView>
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/txtFeaturePng"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/_5sdp"
+                                    android:fontFamily="@font/avenirltstd_medium"
+                                    android:text="@string/png"
+                                    android:textColor="@color/grey"
+                                    android:textSize="@dimen/_10sdp"
+                                    app:layout_constraintStart_toStartOf="@+id/txtUploadImage"
+                                    app:layout_constraintTop_toBottomOf="@+id/txtFeatImgUpload"
+                                    tools:text="@string/png" />-->
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnSave"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_margin="8dp"
+                    android:backgroundTint="@color/colorPrimary"
+                    android:text="Next"
+                    app:cornerRadius="32dp" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.core.widget.NestedScrollView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/title"
+            android:layout_margin="@dimen/_10sdp"
+            android:visibility="gone"
+            app:cardCornerRadius="@dimen/_25sdp">
+
+            <Spinner
+                android:id="@+id/category_spinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:outlineAmbientShadowColor="@color/black"
+                android:paddingLeft="@dimen/_10sdp" />
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+
+</layout>

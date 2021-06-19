@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="historyMainModel"
+            type="com.watirna.shop.views.history.historymain.HistoryMainViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="@dimen/_20sdp"
+        android:background="@color/frag_history_bg"
+        android:orientation="vertical">
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tbHistory"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_23sdp"
+            android:background="@color/frag_history_bg"
+            app:tabBackground="@drawable/tab_selector"
+            app:tabGravity="center"
+            app:tabIndicatorColor="@android:color/transparent"
+            app:tabMode="fixed"
+            android:layout_gravity="center"
+            app:tabTextAppearance="@style/TabLayoutTextFont"
+            app:tabSelectedTextColor="@android:color/white" />
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/vpHisotry"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"/>
+
+    </LinearLayout>
+
+</layout>

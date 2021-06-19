@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="countrylistmodel"
+            type="com.watirna.shop.views.countrylist.CountryViewModel" />
+
+        <variable
+            name="countrylistadapter"
+            type="com.watirna.shop.views.adapters.CountryListAdapter" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        android:theme="@style/AppTheme">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorBasePrimary"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/white"
+                android:contentDescription="@string/app_name"
+                android:onClick="@{() -> countrylistmodel.closeActivity()}"
+                android:paddingStart="@dimen/_5sdp"
+                android:src="@drawable/ic_backarrow"
+                android:tint="@color/white" />
+
+            <androidx.appcompat.widget.SearchView
+                android:id="@+id/sv_country"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:background="@color/white"
+                app:iconifiedByDefault="false"
+                app:queryHint="Search Country" />
+
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/countryListAdapter"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adapter="@{countrylistadapter}"
+            android:background="@color/colorWhite"
+            android:forceHasOverlappingRendering="true"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:targetApi="n" />
+    </LinearLayout>
+</layout>

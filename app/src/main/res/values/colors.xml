@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <color name="colorPrimary">#0d5b65</color>
+    <color name="colorPrimaryDark">#074951</color>
+    <color name="colorAccent">#0d5b65</color>
+    <color name="et_stroke_color">#4F666772</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorGrey">#4F666772</color>
+    <color name="windowBackground">#F7F7F8</color>
+    <color name="et_text_color">#000</color>
+    <color name="app_background_color">#f2f2f2</color>
+    <color name="colorGray">#F2F2F2</color>
+    <color name="black">#000000</color>
+    <color name="colorLightGray">#E4E4E4</color>
+
+    <color name="white">#FFFFFF</color>
+    <color name="colorGreen">#FFFFFF</color>
+    <color name="gray">#b2beb5</color>
+
+    <!-- Text-->
+    <color name="colorPrimaryText">#000</color>
+    <color name="colorSecondaryText">#747474</color>
+    <color name="very_light_grey">#fafafa</color>
+    <color name="colorTextWhite">#FFF</color>
+    <color name="colorTextBlack">#212121</color>
+    <color name="colorScreenBackground" tools:ignore="MissingDefaultResource">#F2F2F2</color>
+
+    <!-- History -->
+    <color name="history_tab_selected_outline">#afb7f0</color>
+    <color name="tab_history_selected_bg">#d2d7fc</color>
+    <color name="tab_history_selected_text">#7482f1</color>
+    <color name="frag_history_bg">#f2f2f2</color>
+
+    <color name="colorBasePrimary" >#00cefe</color>
+    <color name="colorBaseTheme">#00cefe</color>
+    <color name="colorBaseWhite">#FFFFFF</color>
+    <color name="colorYellow">#FFA200</color>
+    <color name="schedule_blue_txt">#11aba9</color>
+    <color name="dark_grey">#666772</color>
+    <color name="grey">#9f9f9f</color>
+    <color name="light_gray">#d3d3d3</color>
+    <color name="notification_grey">#989fcb</color>
+    <color name="colorBlack">#000000</color>
+    <color name="blue">#2196F3</color>
+    <color name="colorError">#DB0C0C</color>
+    <color name="colorPink">#DD39DB</color>
+    <color name="splash_bg_color">#0d5b65</color>
+
+
+    <!-- EditProduct-->
+
+
+
+</resources>
